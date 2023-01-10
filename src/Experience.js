@@ -6,7 +6,7 @@ export default function Experience() {
 
     return (     
         <>
-            <OrbitControls />
+            <OrbitControls makeDefault />
 
             <directionalLight position={ [ 1, 2, 3 ] } intensity={ 1.5 } />
             <ambientLight intensity={ 0.5 } />
@@ -21,7 +21,7 @@ export default function Experience() {
                 <meshStandardMaterial color="mediumpurple" />
             </mesh>
             <TransformControls object={ boxRef } /> 
-            {/* if using ref solution, this needs to be after the referenced obj */}
+            {/* if using ref solution, this needs to be after the referenced obj, better solution because independent, can remove transform controls with no issue */}
 
             <mesh position-y={ - 1 } rotation-x={ - Math.PI * 0.5 } scale={ 10 }>
                 <planeGeometry />
