@@ -24,10 +24,10 @@ export default function Experience() {
                     <sphereGeometry />
                     <meshStandardMaterial color="orange" />
                     <Html
-                        position={[ 1, 1, 0 ]}
+                        position={[ .5, 1, 0 ]}
                         wrapperClass="label"
                     >
-                        Test, hello moto
+                        This is a sphere 👍
                     </Html>
                 </mesh>
             </PivotControls>
