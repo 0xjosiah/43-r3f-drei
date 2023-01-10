@@ -24,8 +24,10 @@ export default function Experience() {
                     <sphereGeometry />
                     <meshStandardMaterial color="orange" />
                     <Html
-                        position={[ .5, 1, 0 ]}
+                        position={[ 0, 1.15, 0 ]}
                         wrapperClass="label"
+                        center // makes center of html element the pivot point
+                        distanceFactor={ 3 } // adds perspective to html element
                     >
                         This is a sphere 👍
                     </Html>
