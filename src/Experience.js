@@ -27,7 +27,8 @@ export default function Experience() {
                         position={[ 0, 1.15, 0 ]}
                         wrapperClass="label"
                         center // makes center of html element the pivot point
-                        distanceFactor={ 3 } // adds perspective to html element
+                        distanceFactor={ 6 } // adds perspective to html element
+                        occlude={ [boxRef, sphere] } // hides element behind objects if provided in array
                     >
                         This is a sphere 👍
                     </Html>
