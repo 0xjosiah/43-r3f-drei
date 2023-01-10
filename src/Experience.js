@@ -1,9 +1,11 @@
-import { Html, OrbitControls, PivotControls, TransformControls } from '@react-three/drei'
+import { Text, Html, OrbitControls, PivotControls, TransformControls } from '@react-three/drei'
+import { useThree } from '@react-three/fiber'
 import { useRef } from 'react'
 
 export default function Experience() {
     const boxRef = useRef(null)
     const sphere = useRef(null)
+    const THREE = useThree()
 
     return (     
         <>
@@ -46,6 +48,18 @@ export default function Experience() {
                 <planeGeometry />
                 <meshStandardMaterial color="greenyellow" />
             </mesh>
+
+            <Text
+                font='bangers-v20-latin-regular.woff'
+                fontSize={ 2 }
+                color="salmon"
+                position={[ 0, 3, -3 ]}
+                maxWidth={ .5 }
+                textAlign="center"
+            >
+                I am 0xjosiah
+                <meshNormalMaterial/>
+            </Text>
 
 
         </>
