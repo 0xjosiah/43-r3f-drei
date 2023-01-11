@@ -6,10 +6,16 @@ import { useControls } from 'leva'
 export default function Experience() {
     const boxRef = useRef(null)
     const sphere = useRef(null)
-    const controls = useControls({
-        position: -2
+    const { positionY, spherePCisVisible, posX } = useControls({
+        positionY: 0,
+        spherePCisVisible: true,
+        posX: {
+            value: -2,
+            min: -4,
+            max: 4,
+            step: 0.1
+        }
     })
-    console.log(controls);
 
     return (     
         <>
@@ -51,9 +57,10 @@ export default function Experience() {
                 lineWidth={ 4 }
                 axisColors={ [ 0x9381ff, 0xff4d6d, 0x7ae582 ]}
                 scale={ 2 }
+                visible={ spherePCisVisible }
                 // fixed={ true } this removes perspective, obj stays same size regardless of depth
             >
-                <mesh position-x={ - 2 } ref={ sphere } position-y={controls.position}>
+                <mesh position-x={ posX } ref={ sphere } position-y={ positionY }>
                     <sphereGeometry />
                     <meshStandardMaterial color="orange" />
                     <Html
