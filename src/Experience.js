@@ -1,4 +1,4 @@
-import { Float, Text, Html, OrbitControls, PivotControls, TransformControls, MeshReflectorMaterial } from '@react-three/drei'
+import { Cloud, Float, Text, Html, OrbitControls, PivotControls, TransformControls, MeshReflectorMaterial, Sky, Stars } from '@react-three/drei'
 import { useThree } from '@react-three/fiber'
 import { useRef } from 'react'
 
@@ -13,6 +13,17 @@ export default function Experience() {
 
             <directionalLight position={ [ 1, 2, 3 ] } intensity={ 1.5 } />
             <ambientLight intensity={ 0.5 } />
+
+            <Sky distance={450000} sunPosition={[0, .1, 10000]} inclination={5} azimuth={0.25} />
+            <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
+            <Cloud
+                opacity={0.5}
+                speed={0.4} // Rotation speed
+                width={10} // Width of the full cloud
+                depth={1.5} // Z-dir depth
+                segments={20} // Number of particles
+                position={[0, 10, -20]}
+            />
 
             <PivotControls 
                 anchor={[ 0, 0, 0 ]}
@@ -49,6 +60,11 @@ export default function Experience() {
                 {/* <meshStandardMaterial color="greenyellow" /> */}
                 <MeshReflectorMaterial 
                     // this doesn't work with non-planar meshes e.g. a sphere
+                    resolution={ 512 }
+                    blur={ [1000, 1000] }
+                    mixBlur={ .75 }
+                    mirror={ .75 }
+                    color="greenyellow"
                 /> 
             </mesh>
 
