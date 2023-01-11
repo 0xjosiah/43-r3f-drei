@@ -1,4 +1,4 @@
-import { Text, Html, OrbitControls, PivotControls, TransformControls } from '@react-three/drei'
+import { Float, Text, Html, OrbitControls, PivotControls, TransformControls, MeshReflectorMaterial } from '@react-three/drei'
 import { useThree } from '@react-three/fiber'
 import { useRef } from 'react'
 
@@ -46,20 +46,53 @@ export default function Experience() {
 
             <mesh position-y={ - 1 } rotation-x={ - Math.PI * 0.5 } scale={ 10 }>
                 <planeGeometry />
-                <meshStandardMaterial color="greenyellow" />
+                {/* <meshStandardMaterial color="greenyellow" /> */}
+                <MeshReflectorMaterial 
+                    // this doesn't work with non-planar meshes e.g. a sphere
+                /> 
             </mesh>
 
-            <Text
-                font='bangers-v20-latin-regular.woff'
-                fontSize={ 2 }
-                color="salmon"
-                position={[ 0, 3, -3 ]}
-                maxWidth={ .5 }
-                textAlign="center"
+            <Float
+                speed={ 5 }
+                floatIntensity={ 20 }
             >
-                I am 0xjosiah
-                <meshNormalMaterial/>
-            </Text>
+                <Text
+                    font='bangers-v20-latin-regular.woff'
+                    fontSize={ 1 }
+                    color="salmon"
+                    position={[ 0, 5.5, -5 ]}
+                    maxWidth={ .5 }
+                    textAlign="center"
+                    outlineBlur={.2}
+                >
+                    I
+                    <meshNormalMaterial/>
+                </Text>
+                <Text
+                    font='bangers-v20-latin-regular.woff'
+                    fontSize={ 1 }
+                    color="salmon"
+                    position={[ 0, 4.5, -4 ]}
+                    maxWidth={ .5 }
+                    textAlign="center"
+                    outlineBlur={.2}
+                >
+                    am
+                    <meshNormalMaterial/>
+                </Text>
+                <Text
+                    font="https://fonts.gstatic.com/s/sirinstencil/v6/mem4YaWwznmLx-lzGfN7MdRyRc9MAQ.woff"
+                    fontSize={ 2 }
+                    color="salmon"
+                    position={[ 0, 3, -3 ]}
+                    maxWidth={ .5 }
+                    textAlign="center"
+                    outlineBlur={.2}
+                >
+                    0xjosiah
+                    <meshNormalMaterial/>
+                </Text>
+            </Float>
 
 
         </>
