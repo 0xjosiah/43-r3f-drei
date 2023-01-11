@@ -1,5 +1,4 @@
 import { Sparkles, Cloud, Float, Text, Html, OrbitControls, PivotControls, TransformControls, MeshReflectorMaterial, Sky, Stars } from '@react-three/drei'
-import { useThree } from '@react-three/fiber'
 import { useRef } from 'react'
 import { useControls } from 'leva'
 
