@@ -21,7 +21,7 @@ export default function Experience() {
             step: 0.1,
             joystick: 'invertY' // joystick avail if only using x and y
         },
-        color: "#ff0000", // use any format but hex (0x) so gui works properly
+        color: "#ff0000", // use any format but hex (0x) so gui works properly, can't use alpha - adj with opacity in material and transparency needs set to true
     })
 
     return (     
