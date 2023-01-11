@@ -18,5 +18,5 @@ root.render(
         >
             <Experience />
         </Canvas>
-    </StrictMode>
+    </StrictMode> // this is ignored when pushed to prod, only a localhost feature
 )
