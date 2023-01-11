@@ -1,4 +1,4 @@
-import { Cloud, Float, Text, Html, OrbitControls, PivotControls, TransformControls, MeshReflectorMaterial, Sky, Stars } from '@react-three/drei'
+import { Sparkles, Cloud, Float, Text, Html, OrbitControls, PivotControls, TransformControls, MeshReflectorMaterial, Sky, Stars } from '@react-three/drei'
 import { useThree } from '@react-three/fiber'
 import { useRef } from 'react'
 
@@ -23,6 +23,22 @@ export default function Experience() {
                 depth={1.5} // Z-dir depth
                 segments={20} // Number of particles
                 position={[0, 10, -20]}
+            />
+            <Sparkles
+                // /** Number of particles (default: 100) */
+                // count?: number
+                // /** Speed of particles (default: 1) */
+                // speed?: number | Float32Array
+                // /** Opacity of particles (default: 1) */
+                // opacity?: number | Float32Array
+                // /** Color of particles (default: 100) */
+                // color?: THREE.ColorRepresentation | Float32Array
+                // /** Size of particles (default: randomized between 0 and 1) */
+                // size?: number | Float32Array
+                // /** The space the particles occupy (default: 1) */
+                // scale?: number | [number, number, number] | THREE.Vector3
+                // /** Movement factor (default: 1) */
+                // noise?: number | [number, number, number] | THREE.Vector3 | Float32Array
             />
 
             <PivotControls 
