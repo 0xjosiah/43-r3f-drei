@@ -15,7 +15,7 @@ export default function Experience() {
             step: 0.1
         },
         position: {
-            value: { x: -2, y: 0, },
+            value: { x: -2, y: 0, z: 0 },
             min: -4,
             max: 4,
             step: 0.1
@@ -65,7 +65,7 @@ export default function Experience() {
                 visible={ spherePCisVisible }
                 // fixed={ true } this removes perspective, obj stays same size regardless of depth
             >
-                <mesh position-x={ posX } ref={ sphere } position-y={ positionY } position={[ position.x, position.y, 0 ]}>
+                <mesh position-x={ posX } ref={ sphere } position-y={ positionY } position={[ position.x, position.y, position.z ]}>
                     <sphereGeometry />
                     <meshStandardMaterial color="orange" />
                     <Html
