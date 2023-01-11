@@ -18,7 +18,8 @@ export default function Experience() {
             value: { x: -2, y: 0, z: 0 },
             min: -4,
             max: 4,
-            step: 0.1
+            step: 0.1,
+            joystick: 'invertY' // joystick avail if only using x and y
         },
     })
 
