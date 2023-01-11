@@ -5,7 +5,7 @@ import { useControls } from 'leva'
 export default function Experience() {
     const boxRef = useRef(null)
     const sphere = useRef(null)
-    const { positionY, spherePCisVisible, posX, position } = useControls({
+    const { positionY, spherePCisVisible, posX, position, color } = useControls({
         positionY: 0,
         spherePCisVisible: true,
         posX: {
@@ -21,6 +21,7 @@ export default function Experience() {
             step: 0.1,
             joystick: 'invertY' // joystick avail if only using x and y
         },
+        color: "#ff0000", // use any format but hex (0x) so gui works properly
     })
 
     return (     
@@ -66,9 +67,13 @@ export default function Experience() {
                 visible={ spherePCisVisible }
                 // fixed={ true } this removes perspective, obj stays same size regardless of depth
             >
-                <mesh position-x={ posX } ref={ sphere } position-y={ positionY } position={[ position.x, position.y, position.z ]}>
+                <mesh position-x={ posX }
+                    ref={ sphere }
+                    position-y={ positionY }
+                    position={[ position.x, position.y, position.z ]}
+                >
                     <sphereGeometry />
-                    <meshStandardMaterial color="orange" />
+                    <meshStandardMaterial color={ color } />
                     <Html
                         position={[ 0, 1.15, 0 ]}
                         wrapperClass="label"
