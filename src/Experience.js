@@ -1,11 +1,11 @@
 import { Sparkles, Cloud, Float, Text, Html, OrbitControls, PivotControls, TransformControls, MeshReflectorMaterial, Sky, Stars } from '@react-three/drei'
 import { useRef } from 'react'
-import { useControls } from 'leva'
+import { button, useControls } from 'leva'
 
 export default function Experience() {
     const boxRef = useRef(null)
     const sphere = useRef(null)
-    const { positionY, spherePCisVisible, posX, position, color } = useControls({
+    const { positionY, spherePCisVisible, posX, position, color } = useControls('sphere', { // adding string as first arg makes all following a folder
         positionY: 0,
         spherePCisVisible: true,
         posX: {
@@ -22,6 +22,15 @@ export default function Experience() {
             joystick: 'invertY' // joystick avail if only using x and y
         },
         color: "#ff0000", // use any format but hex (0x) so gui works properly, can't use alpha - adj with opacity in material and transparency needs set to true
+        
+        /* other examples */
+        myInterval: {
+            min: 0,
+            max: 10,
+            value: [ 3, 5 ]
+        },
+        myButton: button(() => console.log('button clicked')),
+        select: { options: [ 'a', 'b', 'c' ]},
     })
 
     return (     
